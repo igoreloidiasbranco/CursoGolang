@@ -1,10 +1,13 @@
-// pacote principal para executar o programa
+// Programas executáveis iniciam pelo pacote main
 package main
 
-// import do pacote fmt disponibilizado pela linguagem Go
+/*
+Os códigos em Go são organizados em pacotes
+e para usá-los é necessário declarar um ou vários imports
+*/
 import "fmt"
 
-// função principal(main) para executar o programa
+// A porta de entrada de um programa Go é a função main
 func main() {
 	fmt.Print("Primeiro ")
 	fmt.Print("Programa!")
