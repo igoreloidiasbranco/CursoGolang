@@ -24,7 +24,7 @@ func main() {
 		fmt.Printf("Erro ao abrir conexão: %v\n", err)
 		panic(err)
 	}
-	defer db.Close()
+	defer db.Close() // fecha a conexão com o banco de dados ao final do método main
 
 	// Testa a conexão
 	fmt.Println("Testando conexão...")

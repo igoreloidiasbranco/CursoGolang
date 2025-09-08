@@ -25,12 +25,12 @@ func main() {
 	}
 	fmt.Println("Conexão estabelecida com sucesso!")
 
-	stmt, err := db.Prepare("insert into usuarios (nome) values (?)")
+	stmt, err := db.Prepare("insert into usuarios (nome) values (?)") // prepara o statement para inserir os usuários
 	if err != nil {
 		fmt.Printf("Erro ao preparar statement: %v\n", err)
 		panic(err)
 	}
-	defer stmt.Close()
+	defer stmt.Close() // fecha o statement ao final do método main
 
 	fmt.Println("Inserindo usuários...")
 

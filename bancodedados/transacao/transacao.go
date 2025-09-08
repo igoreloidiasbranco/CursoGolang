@@ -12,11 +12,11 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer db.Close()
+	defer db.Close() // fecha a conexão com o banco de dados ao final do método main
 
 	//Transação, como se fosse o Transaction do Java, ou tudo acontece ou nada acontece.
-	tx, _ := db.Begin() //inicia e cria um objeto tx(transação) para fornecer os comandos de sql
-	stmt, _ := tx.Prepare("insert into usuarios (id, nome) values (?, ?)")
+	tx, _ := db.Begin()                                                    //inicia e cria um objeto tx(transação) para fornecer os comandos de sql
+	stmt, _ := tx.Prepare("insert into usuarios (id, nome) values (?, ?)") // prepara o statement para inserir os usuários
 
 	stmt.Exec(2000, "Bia")
 	stmt.Exec(2001, "Carlos")
